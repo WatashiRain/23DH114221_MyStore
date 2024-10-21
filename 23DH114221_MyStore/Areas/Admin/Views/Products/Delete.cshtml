@@ -1,0 +1,99 @@
+﻿@model _23DH114221_MyStore.Models.Product
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    #BoxDetail {
+        height: auto;
+        width: 1480px;
+    }
+
+    #nameProduct {
+        height: 40px;
+        width: 1480px;
+        display: flex;
+    }
+
+    #descriptionProduct {
+        height: 40px;
+        width: 1480px;
+        display: flex;
+    }
+
+    #priceProduct {
+        height: 40px;
+        width: 1480px;
+        display: flex;
+    }
+
+    #imageProduct {
+        height: 40px;
+        width: 1480px;
+        display: flex;
+    }
+
+    #categoryProduct {
+        height: 40px;
+        width: 1480px;
+        display: flex;
+    }
+
+    #empty {
+        height: 40px;
+        width: 1480px;
+        display: flex;
+    }
+
+    #left {
+        padding: 0 10px 0 0;
+        height: 40px;
+        width: 175px;
+        text-align: right;
+    }
+
+    #right {
+        padding: 0 0 0 20px;
+        height: auto;
+        width: auto;
+    }
+</style>
+<h2 class="bg-success">XÓA SẢN PHẨM</h2>
+
+<h3 class="bg-danger">Bạn thực sự muốn xóa sản phẩm này à?</h3>
+<div class="container-fluid">
+    <dl class="dl-horizontal">
+        <div id="nameProduct">
+            <dt id="left">Tên sản phẩm</dt>
+            <dd id="right">@Html.DisplayFor(model => model.ProductName)</dd>
+        </div>
+        <div id="descriptionProduct">
+            <dt id="left">Mô tả</dt>
+            <dd id="right">@Html.DisplayFor(model => model.ProductDescription)</dd>
+        </div>
+        <div id="priceProduct">
+            <dt id="left">Đơn giá</dt>
+            <dd id="right"> @Html.DisplayFor(model => model.ProductPrice)</dd>
+        </div>
+        <div id="imageProduct">
+            <dt id="left">Hình ảnh</dt>
+            <dd id="right">@Html.DisplayFor(model => model.ProductImage)</dd>
+        </div>
+        <div id="categoryProduct">
+            <dt id="left">Danh mục</dt>
+            <dd id="right">@Html.DisplayFor(model => model.Category.CategoryName)</dd>
+
+        </div>
+
+
+
+        <div id="empty">
+            <dt id="left"></dt>
+            <dd id="right">
+                @Html.ActionLink("Xóa", "Edit", new { id = Model.ProductID }, new { @class = "btn btn-primary btn-sm" })
+                @Html.ActionLink("Quay lại danh sách", "Index", null, new { @class = "btn btn-primary btn-sm" })
+            </dd>
+        </div>
+    </dl>
+</div>
